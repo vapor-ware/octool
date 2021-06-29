@@ -1,0 +1,44 @@
+project_name: octool
+before:
+  hooks:
+    - go mod download
+builds:
+  - env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -w
+      - -s
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+release:
+  github:
+    owner: vapor-ware
+    name: octool
+  draft: false
+  prerelease: auto
+  name_template: "{{ .Version }}"
+brews:
+  - name: github
+    tap:
+      owner: vapor-ware
+      name: homebrew-formula
+    commit_author:
+      name: vio-bot
+      email: 'marco+viogh@vapor.io'
+    homepage: 'https://github.com/vapor-ware/octool'
+    description: 'Simple tool to test/debug/diagnose connections to OpenConfig servers'
+    test: |
+      system "#{bin}/octool -h"
+checksum:
+  name_template: checksums.txt
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
