@@ -8,11 +8,11 @@ library identifier: 'vapor@1.15.3', retriever: modernSCM([
 ])
 
 golangPipeline([
+  'image': 'vaporio/octool',
   'skipIntegrationTest': true,
   'skipUnitTest': true,
   'skipSetup': true,
   'skipLint': true,
   'goVersion': '1.16',
   'mainBranch': 'master',
-  'publishLatest': false,
 ])

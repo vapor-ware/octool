@@ -20,6 +20,15 @@ release:
   draft: false
   prerelease: auto
   name_template: "{{ .Version }}"
+dockers:
+  - goos: linux
+    goarch: amd64
+    binaries:
+      - octool
+    image_templates:
+      - vaporio/octool:{{ .Tag }}
+      - vaporio/octool:{{ .Major }}
+      - vaporio/octool:latest
 brews:
   - name: github
     tap:
