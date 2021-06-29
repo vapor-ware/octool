@@ -31,7 +31,7 @@ dockers:
       - vaporio/octool:{{ .Major }}
       - vaporio/octool:latest
 brews:
-  - name: github
+  - name: octool
     tap:
       owner: vapor-ware
       name: homebrew-formula

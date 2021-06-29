@@ -3,7 +3,7 @@
 #
 
 BIN_NAME    := octool
-BIN_VERSION := v0.1.0-rc0
+BIN_VERSION := v0.1.0-rc1
 
 LDFLAGS := -w -s
 
