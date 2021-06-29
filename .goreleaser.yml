@@ -2,6 +2,7 @@ project_name: octool
 before:
   hooks:
     - go mod download
+    - rm -rf dist
 builds:
   - env:
       - CGO_ENABLED=0
