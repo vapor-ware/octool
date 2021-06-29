@@ -11,6 +11,7 @@ golangPipeline([
   'skipIntegrationTest': true,
   'skipUnitTest': true,
   'skipSetup': true,
+  'skipLint': true,
   'goVersion': '1.16',
   'mainBranch': 'master',
   'publishLatest': false,
