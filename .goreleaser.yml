@@ -24,12 +24,10 @@ release:
 dockers:
   - goos: linux
     goarch: amd64
-    binaries:
-      - octool
     image_templates:
-      - vaporio/octool:{{ .Tag }}
-      - vaporio/octool:{{ .Major }}
-      - vaporio/octool:latest
+      - docker.io/vaporio/octool:{{ .Tag }}
+      - docker.io/vaporio/octool:{{ .Major }}
+      - docker.io/vaporio/octool:latest
 brews:
   - name: octool
     tap:
